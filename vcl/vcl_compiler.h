@@ -119,6 +119,12 @@
 #  else
 #   define VCL_GCC_40
 #  endif
+# elif (__GNUC__==5)
+#  define VCL_GCC_4
+#  define VCL_GCC_41
+# elif (__GNUC__==6)
+#  define VCL_GCC_4
+#  define VCL_GCC_41
 # else
 #  error "Dunno about this gcc"
 # endif
