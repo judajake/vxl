@@ -36,6 +36,11 @@ SET(OPENJPEG2_SRCS
 )
 ADD_DEFINITIONS( ${OPENJPEG2_DEFINITIONS} )
 
+#set WIN32 defintion to fix compilation issue with ninja + msvc toolchain
+IF(WIN32)
+  ADD_DEFINITIONS("-DWIN32")
+ENDIF(WIN32)
+
 # Pass proper definition to preprocessor to generate shared lib
 ADD_LIBRARY(openjpeg2 ${OPENJPEG2_SRCS})
 SET_TARGET_PROPERTIES(openjpeg2 PROPERTIES
